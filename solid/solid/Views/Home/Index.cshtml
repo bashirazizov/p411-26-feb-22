@@ -1,0 +1,68 @@
+﻿@model List<Product>
+
+<section id="banner">
+    <div class="inner">
+        <div class="logo"><span class="icon fa-gem"></span></div>
+        <h2>This is Solid State</h2>
+        <p>Another free + fully responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
+    </div>
+</section>
+
+<section id="wrapper">
+
+    <section id="four" class="wrapper alt style1">
+        <div class="inner">
+            <h2 class="major">Products</h2>
+            <p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
+            <section class="features">
+                @foreach (Product item in Model)
+                {
+                    <article>
+                        <a href="#" class="image"><img src="@item.Image" /></a>
+                        <h3 class="major">@item.Name - @(item.Price/100)@(item.Price%100==0?"":"."+item.Price % 100) ₼</h3>
+                        <p>@item.Description</p>
+                        <a href="/products/addtobasket/@item.Id" class="special">Add to basket</a>
+                        <a href="/products/details/@item.Id" class="special">Learn more</a>
+                    </article>
+                }
+            </section>
+            <ul class="actions">
+                <li><a href="#" class="button">Browse All</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="one" class="wrapper spotlight style1">
+        <div class="inner">
+            <a href="#" class="image"><img src="~/images/pic01.jpg" alt="" /></a>
+            <div class="content">
+                <h2 class="major">Magna arcu feugiat</h2>
+                <p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
+                <a href="#" class="special">Learn more</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="two" class="wrapper alt spotlight style2">
+        <div class="inner">
+            <a href="#" class="image"><img src="~/images/pic02.jpg" alt="" /></a>
+            <div class="content">
+                <h2 class="major">Tempus adipiscing</h2>
+                <p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
+                <a href="#" class="special">Learn more</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="three" class="wrapper spotlight style3">
+        <div class="inner">
+            <a href="#" class="image"><img src="~/images/pic03.jpg" alt="" /></a>
+            <div class="content">
+                <h2 class="major">Nullam dignissim</h2>
+                <p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
+                <a href="#" class="special">Learn more</a>
+            </div>
+        </div>
+    </section>
+
+</section>
